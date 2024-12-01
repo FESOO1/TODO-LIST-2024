@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    --f-dm-sans: "DM Sans", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--f-dm-sans);
+}
+
+body {
+    background-color: rgb(16,16,16);
+}
+
+/* TODO LIST CONTAINER */
+
+.todo-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* TODO LIST INPUT CONTAINER */
+
+.tl-input-container {
+    padding-block: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* TODO LIST INPUT CONTAINER ITSELF */
+
+.tl-input-container-itself {
+    width: 500px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-radius: 0.1rem;
+    overflow: hidden;
+    background-color: rgb(20,20,20);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.tl-input-container-itself-input {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    padding-inline: 15px;
+}
+
+.tl-input-container-itself-button {
+    border: 0;
+    background-color: rgb(30,30,30);
+    color: white;
+    font-size: 1rem;
+    padding-inline: 20px;
+    border-left: 1px solid rgba(255,255,255,0.02);
+    cursor: pointer;
+}
+
+.tl-input-container-itself-button:hover {
+    background-color: rgb(40,40,40);
+}
+
+.tl-input-container-itself-button:active {
+    background-color: rgb(25,25,25);
+}
+
+/* TODO LIST OUTPUT CONTAINER */
