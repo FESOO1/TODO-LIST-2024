@@ -48,14 +48,14 @@ addTodoButton.addEventListener('click', addNewTodo);
 // RETRIEVING DATA FROM LOCAL STORAGE
 
 function retrieveDataFromLocalStorage() {
-    const outputItself = JSON.parse(localStorage.getItem('newTodo'));
+    const outputItselfLC = JSON.parse(localStorage.getItem('newTodo'));
 
-    if (outputItself) {
-        for (let i = 0; i < outputItself.length; i++) {
+    if (outputItselfLC) {
+        for (let i = 0; i < outputItselfLC.length; i++) {
             // ADDING A NEW ELEMENT EACH TIME THE ADD BUTTON IS CLICKED
             outputContainer.innerHTML += `
                 <div class="tl-output-itself">
-                    <p class="tl-output-itself-paragraph">${outputItself[i]}</p>
+                    <p class="tl-output-itself-paragraph">${outputItselfLC[i]}</p>
                     <div class="tl-output-itself-buttons">
                         <button class="tl-output-itself-button tl-output-itself-delete-button">Delete</button>
                     </div>
@@ -63,8 +63,21 @@ function retrieveDataFromLocalStorage() {
             `;
 
             // PUSHING THE INPUT INTO THE ARRAY
-            outputTextArray.push(outputItself[i]);
+            outputTextArray.push(outputItselfLC[i]);
             localStorage.setItem('newTodo', JSON.stringify(outputTextArray));
+
+            // DELETE BUTTON FUNCTIONALITIES
+            const outputItself = document.querySelectorAll('.tl-output-itself');
+            const deleteButton = document.querySelectorAll('.tl-output-itself-delete-button');
+            
+            for (let i = 0; i < deleteButton.length; i++) {
+                // DELETE FUNCTION
+                deleteButton[i].addEventListener('click', () => {
+                    outputTextArray.splice(i, 1);
+                    outputContainer.removeChild(outputItself[i]);
+                    localStorage.setItem('newTodo', JSON.stringify(outputTextArray));
+                });
+            };
         };
     };
 };
