@@ -71,3 +71,54 @@ body {
 }
 
 /* TODO LIST OUTPUT CONTAINER */
+
+.tl-output-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* TODO LIST OUTPUT ITSELF */
+
+.tl-output-itself {
+    padding: 10px;
+    border-radius: 0.1rem;
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.tl-output-itself-paragraph {
+    color: white;
+    font-weight: 300;
+}
+
+/* TODO LIST OUTPUT ITSELF BUTTONS */
+
+.tl-output-itself-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+}
+
+.tl-output-itself-button {
+    height: 40px;
+    border-radius: 0.1rem;
+    border: 0;
+    font-size: 1rem;
+    background-color: rgb(30,30,30);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+}
+
+.tl-output-itself-button:first-of-type:hover {
+    background-color: rgb(40,40,40);
+}
+
+.tl-output-itself-button:last-of-type:hover {
+    background-color: red;
+}
